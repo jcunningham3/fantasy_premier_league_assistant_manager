@@ -1,0 +1,257 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block content %}
+
+<style>
+  .player-btn {
+    width: 20%;
+    max-width: 100px;
+  }
+  .mob {
+    width: 70%;
+    max-width: 60px;
+  }
+  .menu {
+    width: 100%;
+  }
+</style>
+
+<!-- team info basic -->
+<div class="w3-animate-top">
+  <div class="">
+    <h3>{{player.team_name}}</h3>
+  </div>
+  <div class="">
+    <h5>Total Points {{player.overall_points}}</h5>
+    <h5>Gameweek Points {{player.gameweek_points}}</h5>
+  </div>
+</div>
+
+<!-- pitch view and navigation -->
+<div class="w3-row">
+
+  <!-- pitch view -->
+  <div class="w3-threequarter">
+
+    <!-- starting xi -->
+    <div class="w3-green w3-center">
+
+      <!-- keeper -->
+      <div class="w3-animate-left">
+
+        <div class="player-btn w3-btn w3-ripple">
+          <img class="mob" src="{{player['p1_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p1_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p1_event_points']}}</div>
+        </div>
+
+      </div>
+
+      <!-- Defense -->
+      <div class="w3-animate-right">
+
+        {% if player.p2_element_type == 2 %}
+        <div class="player-btn w3-btn w3-ripple">
+          <img class="mob" src="{{player['p2_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p2_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p2_event_points']}}</div>
+        </div>
+        {% endif %}
+
+        {% if player.p3_element_type == 2 %}
+        <div class="player-btn w3-btn w3-ripple">
+          <img class="mob" src="{{player['p3_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p3_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p3_event_points']}}</div>
+        </div>
+        {% endif %}
+
+        {% if player.p4_element_type == 2 %}
+        <div class="player-btn w3-btn w3-ripple">
+          <img class="mob" src="{{player['p4_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p4_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p4_event_points']}}</div>
+        </div>
+        {% endif %}
+
+        {% if player.p5_element_type == 2 %}
+        <div class="player-btn w3-btn w3-ripple">
+          <img class="mob" src="{{player['p5_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p5_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p5_event_points']}}</div>
+        </div>
+        {% endif %}
+
+        {% if player.p6_element_type == 2 %}
+        <div class="player-btn w3-btn w3-ripple">
+          <img class="mob" src="{{player['p6_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p6_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p6_event_points']}}</div>
+        </div>
+        {% endif %}
+
+      </div>
+
+
+      <!-- Midfield -->
+      <div class="w3-animate-left">
+
+        {% if player.p5_element_type == 3 %}
+        <div class="w3-btn w3-ripple">
+          <img class="mob" src="{{player['p5_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p5_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p5_event_points']}}</div>
+        </div>
+        {% endif %}
+
+        {% if player.p6_element_type == 3 %}
+        <div class="w3-btn w3-ripple">
+          <img class="mob" src="{{player['p6_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p6_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p6_event_points']}}</div>
+        </div>
+        {% endif %}
+
+        {% if player.p7_element_type == 3 %}
+        <div class="w3-btn w3-ripple">
+          <img class="mob" src="{{player['p7_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p7_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p7_event_points']}}</div>
+        </div>
+        {% endif %}
+
+        {% if player.p8_element_type == 3 %}
+        <div class="w3-btn w3-ripple">
+          <img class="mob" src="{{player['p8_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p8_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p8_event_points']}}</div>
+        </div>
+        {% endif %}
+
+        {% if player.p9_element_type == 3 %}
+        <div class="w3-btn w3-ripple">
+          <img class="mob" src="{{player['p9_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p9_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p9_event_points']}}</div>
+        </div>
+        {% endif %}
+
+        {% if player.p10_element_type == 3 %}
+        <div class="w3-btn w3-ripple">
+          <img class="mob" src="{{player['p10_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p10_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p10_event_points']}}</div>
+        </div>
+        {% endif %}
+
+      </div>
+
+      <!-- Forwards -->
+      <div class="w3-animate-right">
+
+        {% if player.p9_element_type == 4 %}
+        <div class="w3-btn w3-ripple">
+          <img class="mob" src="{{player['p9_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p9_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p9_event_points']}}</div>
+        </div>
+        {% endif %}
+
+        {% if player.p10_element_type == 4 %}
+        <div class="w3-btn w3-ripple">
+          <img class="mob" src="{{player['p10_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p10_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p10_event_points']}}</div>
+        </div>
+        {% endif %}
+
+        {% if player.p11_element_type == 4 %}
+        <div class="w3-btn w3-ripple">
+          <img class="mob" src="{{player['p11_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p11_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p11_event_points']}}</div>
+        </div>
+        {% endif %}
+
+      </div>
+
+    </div>
+
+    <!-- subs -->
+    <div class="w3-center w3-light-grey">
+      <!-- Substittes -->
+      <div class="w3-animate-right">
+        <div class="w3-btn w3-ripple">
+          <img class="mob" src="{{player['p12_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p12_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p12_event_points']}}</div>
+        </div>
+
+        <div class="w3-btn w3-ripple">
+          <img class="mob" src="{{player['p13_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p13_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p13_event_points']}}</div>
+        </div>
+
+        <div class="w3-btn w3-ripple">
+          <img class="mob" src="{{player['p14_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p14_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p14_event_points']}}</div>
+        </div>
+
+        <div class="w3-btn w3-ripple">
+          <img class="mob" src="{{player['p15_team_jersey']}}" alt="img">
+          <p class="w3-tiny">{{player['p15_web_name']}}</p>
+          <div class="w3-tiny w3-border w3-round">{{player['p15_event_points']}}</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- navigation -->
+  <div class="w3-quarter">
+
+    <!-- team roster button -->
+    <a href="/user/roster/{{player.id}}/1">
+      <div class="w3-padding w3-mobile">
+        <div class="menu w3-btn w3-ripple w3-border w3-round">
+          Team roster
+        </div>
+      </div>
+    </a>
+
+    <!-- team analysis button -->
+    <a href="/user/transfer_suggestions/{{player.id}}">
+      <div class="w3-padding w3-mobile">
+        <div class="menu w3-btn w3-ripple w3-border w3-round">
+          Team Analysis
+        </div>
+      </div>
+    </a>
+
+    <!-- league tables button -->
+    <a href="/user/league_tables/{{player.id}}">
+      <div class="w3-padding w3-mobile">
+        <div class="menu w3-btn w3-ripple w3-border w3-round">
+          League Tables
+        </div>
+      </div>
+    </a>
+
+    <!-- league awards button -->
+    <a href="#">
+      <div class="w3-padding w3-mobile">
+        <div class="menu w3-btn w3-ripple w3-border w3-round">
+          League Awards
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block content %}
+
+<style>
+  .mob {
+    width: 100%;
+    max-width: 60px;
+  }
+
+  .menu {
+    width: 100%;
+  }
+
+  .league-card {
+    width: 100%;
+    height: 100px;
+  }
+
+</style>
+
+<!-- team info basic -->
+<div class="w3-animate-right">
+  <div class="">
+    <h3>{{player.team_name}} League Tables</h3>
+  </div>
+  <div class="">
+    <h5>Total Points {{player.overall_points}}</h5>
+    <h5>Gameweek Points {{player.gameweek_points}}</h5>
+  </div>
+</div>
+
+<div class="w3-row">
+
+  <!-- left side -->
+  <div class="w3-threequarter">
+
+    {% for league in user_profile['leagues'] %}
+    <a href="#">
+      <div class="league-card w3-border w3-round w3-btn w3-ripple">
+        <h3 class="w3-text-black">{{league['name']}}</h3>
+      </div>
+    </a>
+    {% endfor %}
+
+  </div>
+
+  <!-- navigation -->
+  <div class="w3-quarter">
+
+    <a href="/user/{{player.id}}">
+      <div class="w3-padding w3-mobile">
+        <div class="menu w3-btn w3-ripple w3-border w3-round">
+          Back
+        </div>
+      </div>
+    </a>
+
+    <a href="/user/roster/{{player.id}}/1">
+      <div class="w3-padding w3-mobile">
+        <div class="menu w3-btn w3-ripple w3-border w3-round">
+          Team roster
+        </div>
+      </div>
+    </a>
+
+    <a href="/user/transfer_suggestions/{{player.id}}">
+      <div class="w3-padding w3-mobile">
+        <div class="menu w3-btn w3-ripple w3-border w3-round">
+          Team Analysis
+        </div>
+      </div>
+    </a>
+
+    <a href="#">
+      <div class="w3-padding w3-mobile">
+        <div class="menu w3-btn w3-ripple w3-border w3-round">
+          League Awards
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+</div>
+
+
+{% endblock %}
